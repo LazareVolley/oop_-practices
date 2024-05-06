@@ -152,7 +152,7 @@ print(airplanes.end_of_flight())
 #Задача №4
 
 class MusicAlbum():
-    def __init__(self = list, performer = str, album_title = str, music_genre = str):
+    def __init__(self = list, performer = str, album_title = str, music_genre = str, count = int):
         """
         Конструктор
         :return: None
@@ -161,39 +161,50 @@ class MusicAlbum():
         self.album_title = album_title
         self.music_genre = music_genre
         self.tracks = []
+        self.count = 0
 
     def add_track_list(self, track: str):
         """
-        Добавление строк в поле 'track_list'
+        Добавление строк в поле 'track_list' (+ счётчик)
         :return: None
         """
         self.tracks.append(track)
         print(self.tracks)
-
+        self.count += 1
     def delete_track(self, track):
         """
         Поиск и даление строки из сприска 'tracks'
-        :param track:
-        :return:
+        :return: str
         """
         if track in self.tracks:
             music = self.track.pop(track)
             print(f"Песня {music} удалена")
+            self.count -= 1
+
         else:
-            print("Такой трек не найден в альбоме")
+            return "Такой трек не найден в альбоме"
+
 
     def play_track(self, track):
         """
         Поиск строки в списке 'tracks'
-        :param track:
-        :return:
+        :return: str
         """
         if track in self.tracks:
-            print(f"Песня {track} воспроизведена...")
+            return f"Песня {track} воспроизведена..."
         else:
-            print("Такой трек не найден в альбоме")
+            return "Такой трек не найден в альбоме"
+
+    def count_tracks(self):
+        """
+        Вывод поля 'count' (количества треков)
+        :return: Принимает ссылку на объект класса MusicAlbum
+        """
+        return f"В альбоме {self.count} треков"
+
 
 Albums = MusicAlbum("a-ha", "Hunting High and Low", "R&B / Pop")
 print(Albums.add_track_list(track=input(">>")))
 print(Albums.delete_track(track= input(">>")))
 print(Albums.play_track(track= input(">>")))
+print(Albums.count_tracks())
