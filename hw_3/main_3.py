@@ -158,3 +158,61 @@ class Employee:
         return employer
 
 employer = Employee("Петя", "Недопрограммист", "IT-сервисы", 100.50, 10, ["Pet Project"])
+
+#Задача №3. (Робот)
+
+class Robot:
+    def __init__(self, serial_number: str, model: str, current_task: str, battery_level: int, status: bool):
+        self.__serial_number = serial_number
+        self.__model = model
+        self.__current_task = current_task
+        self.__battery_level = battery_level
+        self.__status = status
+
+    def get_serial_number(self):
+        return self.__serial_number
+
+    def get_model(self):
+        return self.__model
+
+    def get_current_task(self):
+        return self.__current_task
+
+    def get_battery_level(self):
+        return self.__battery_level
+
+    def get_status(self):
+        return self.__status
+
+    def new_current_task(self, task):
+        self.__current_task = task
+
+    def del_current_task(self, task):
+        del task
+
+    def increase_battery_level(self, charge):
+
+        if self.__battery_level + charge > 100:
+            return f"Действие невозможно! Заряд превышает максимально возможное значение!"
+        else:
+            self.__battery_level += charge
+    def decrease_battery_level(self, charge):
+
+        if self.__battery_level - charge < 0:
+            return f"Действие невозможно! Заряд менее минимально возможного значения!"
+        else:
+            self.__battery_level -= charge
+
+    def turn_on_robot(self):
+
+        if not self.__status:
+            self.__status = True
+    def pause_robot(self):
+
+        if self.__status:
+            self.__status = False
+
+    def __str__(self):
+        return robot
+
+robot = Robot("FEG5*44YR$1T5&19E", "Wall-e", "relax", 100, False)
