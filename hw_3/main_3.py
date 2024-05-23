@@ -103,3 +103,58 @@ class Spell:
         return spell
 
 spell = Spell("expecto patronum", 10, "explosive", "In order to use it, you must recall and feel your happiest memory (which is not easy with dementors), pull out your wand and say 'Expecto Patronum'")
+
+#Задача №2. (Сотрудник)
+
+class Employee:
+    def __init__(self, name: str, position: str, department: str, salary: float, work_experience: int, completed_projects: list = None):
+        self.__name = name
+        self.__position = position
+        self.__departament = department
+        self.__salary = salary
+        self.__work_experience = work_experience
+        self.__completed_projects = completed_projects
+
+    def get_name(self):
+        return self.__name
+
+    def get_position(self):
+        return self.__position
+
+    def get_departament(self):
+        return self.__departament
+
+    def get_salary(self):
+        return self.__salary
+
+    def get_work_experience(self):
+        return self.__work_experience
+
+    def get_completed_projects(self):
+        return self.__completed_projects
+
+    def set_position(self, position):
+        self.__position = position
+
+    def set_departament(self, position, departament):
+        self.__departament = departament
+
+    def pay_salary(self, salary):
+        self.__salary = salary
+
+    def add_projects(self, project):
+        self.__completed_projects += project
+
+    def delete_projects(self, project):
+        del project
+
+    def increase_salary(self, salary):
+        self.__salary += salary
+
+    def decrease_salary(self, salary):
+        self.__salary -= salary
+
+    def __str__(self):
+        return employer
+
+employer = Employee("Петя", "Недопрограммист", "IT-сервисы", 100.50, 10, ["Pet Project"])
