@@ -216,3 +216,68 @@ class Robot:
         return robot
 
 robot = Robot("FEG5*44YR$1T5&19E", "Wall-e", "relax", 100, False)
+
+#Задача №4. (Атлет)
+
+class Achievement:
+    pass
+class Athlete:
+    def __init__(self, name: str, age: int, sport: str, status: bool, achievements: list = Achievement):
+        self.__name = name
+        self.__age = age
+        self.__sport = sport
+        self.__achievements = achievements
+        self.__status = status
+
+    def get_name(self):
+        return self.__name
+
+    def get_age(self):
+        return self.__age
+
+    def get_sport(self):
+        return self.__sport
+
+    def get_achievements(self):
+        return self.__achievements
+
+    def get_status(self):
+        return self.__status
+
+    def set_age(self, age):
+        self.__age = age
+
+    def set_sport(self, sport):
+        self.__sport = sport
+
+    def set_status(self, status):
+        self.__status = status
+
+    def add_achievement(self, achievement: Achievement):
+        self.__achievements.append(achievement)
+
+    def delete_achievement(self, achievement: Achievement):
+            self.__achievements.remove(achievement)
+
+    def __str__(self):
+        return athlete
+
+athlete = Athlete("Grisha", 27, "Cricket", True, Achievement)
+
+class Programm:
+    @staticmethod
+    def main():
+        # Задача №1.1 (Волшебник)
+        wizard = Wizard("Ron Weasley", "gryffindor", 10, "Eat Slugs", True)
+
+        # Задача №1.2 (Заклинание)
+        spell = Spell("expecto patronum", 10, "explosive","In order to use it, you must recall and feel your happiest memory (which is not easy with dementors), pull out your wand and say 'Expecto Patronum'")
+
+        # Задача №2. (Сотрудник)
+        employer = Employee("Петя", "Недопрограммист", "IT-сервисы", 100.50, 10, ["Pet Project"])
+
+        # Задача №3. (Робот)
+        robot = Robot("FEG5*44YR$1T5&19E", "Wall-e", "relax", 100, False)
+
+        # Задача №4. (Атлет)
+        athlete = Athlete("Grisha", 27, "Cricket", True, Achievement)
